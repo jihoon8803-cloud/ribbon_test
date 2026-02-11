@@ -359,10 +359,33 @@ footer {
     font-weight: 600;
 }
 
+.visitor-counter {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.visitor-counter .divider {
+    font-size: 0.7rem;
+    color: #DDD;
+}
+
+.visitor-counter strong {
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-left: 4px;
+}
+
 .copyright {
-    margin-top: 60px;
-    font-size: 0.8rem;
-    opacity: 0.4;
+    margin-top: 25px;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    letter-spacing: 0.05em;
 }
 
 /* Desktop Responsiveness */
