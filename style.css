@@ -1,0 +1,279 @@
+:root {
+    /* Color Palette derived from Princess Cake */
+    --color-primary: #FFB6C1;       /* Light Pink */
+    --color-secondary: #FFC0CB;     /* Pink */
+    --color-accent: #FF69B4;        /* Hot Pink (for highlights) */
+    --color-bg: #FFF5EE;            /* Seashell (Warm Cream) */
+    --color-surface: #FFFFFF;       /* White */
+    --color-text-main: #4A4A4A;     /* Dark Grey for text */
+    --color-text-light: #888888;    /* Light Grey for subtitles */
+    --color-shadow: rgba(255, 182, 193, 0.3); /* Soft pink shadow */
+
+    /* Typography */
+    --font-main: 'Noto Sans KR', sans-serif;
+    --font-handwriting: 'Gaegu', cursive;
+
+    /* Spacing */
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 48px;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-handwriting);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #FFF0F5 0%, #FFB6C1 100%);
+    position: relative;
+    border-bottom-left-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px var(--color-shadow);
+}
+
+.hero-content {
+    animation: fadeIn 1s ease-out;
+}
+
+.logo {
+    font-size: 3.5rem;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--color-text-main);
+    margin-bottom: var(--spacing-xl);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-accent);
+    font-family: var(--font-handwriting);
+    animation: float 2s infinite ease-in-out;
+    font-size: 1.2rem;
+}
+
+.scroll-indicator i {
+    margin-top: var(--spacing-sm);
+}
+
+/* Main Content */
+main {
+    padding: var(--spacing-xl) var(--spacing-md);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Section Common */
+section {
+    margin-bottom: var(--spacing-xl);
+    animation: fadeIn 1s ease-out;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+}
+
+.date {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Lineup Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+.menu-item {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(255, 182, 193, 0.2);
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--color-shadow);
+}
+
+.menu-info h3 {
+    font-size: 1.4rem;
+    color: var(--color-text-main);
+    margin-bottom: 4px;
+}
+
+.menu-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+}
+
+.menu-price {
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.menu-badge {
+    background-color: var(--color-bg);
+    color: var(--color-accent);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.sold-out {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.sold-out .menu-badge {
+    background-color: #E0E0E0;
+    color: #888;
+}
+
+/* Reservation Section */
+.reservation-section {
+    text-align: center;
+    background-color: var(--color-surface);
+    padding: var(--spacing-xl) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px var(--color-shadow);
+}
+
+.reservation-content h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.reservation-content p {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-light);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #FAE100; /* Kakao Yellow */
+    color: #3C1E1E; /* Kakao Brown */
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(250, 225, 0, 0.4);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(250, 225, 0, 0.5);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-surface);
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.social-links {
+    margin-bottom: var(--spacing-lg);
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin: 0 var(--spacing-md);
+}
+
+.social-links a:hover {
+    color: var(--color-accent);
+}
+
+.shop-info p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 4px;
+}
+
+.copyright {
+    margin-top: var(--spacing-lg);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Desktop Responsiveness */
+@media (min-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
